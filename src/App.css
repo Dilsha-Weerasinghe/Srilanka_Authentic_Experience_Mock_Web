@@ -1,0 +1,51 @@
+/* App-specific styles */
+
+/* Smooth scrolling disabled for GSAP control */
+html {
+  scroll-behavior: auto;
+}
+
+/* Ensure sections stack properly */
+main {
+  position: relative;
+}
+
+/* Section z-index stacking */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Image loading optimization */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* Button focus states */
+button:focus-visible {
+  outline: 2px solid #D4A03A;
+  outline-offset: 2px;
+}
+
+/* Link hover transitions */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B3D2E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 160, 58, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 160, 58, 0.7);
+}
