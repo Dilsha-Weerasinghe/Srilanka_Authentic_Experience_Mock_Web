@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,13 +25,13 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
       setFormData({ name: '', email: '', travelDates: '', message: '' });
-      
+
       // Reset submitted state after 3 seconds
       setTimeout(() => setSubmitted(false), 3000);
     }, 1500);
@@ -46,11 +46,11 @@ export default function ContactSection() {
     const columns = content.querySelectorAll('.contact-column');
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(columns, 
-        { y: 30, opacity: 0 }, 
-        { 
-          y: 0, 
-          opacity: 1, 
+      gsap.fromTo(columns,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
           stagger: 0.15,
           ease: 'power2.out',
           scrollTrigger: {
@@ -67,7 +67,7 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       id="contact"
       className="relative z-40 bg-[#F4F1EA] py-20 md:py-28"
@@ -83,7 +83,7 @@ export default function ContactSection() {
             Ready to start your Sri Lankan adventure? Reach out and we'll craft a personalized journey just for you.
           </p>
         </div>
-        
+
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Contact Form */}
@@ -92,7 +92,7 @@ export default function ContactSection() {
               <h3 className="text-[#0B3D2E] text-xl font-semibold mb-6">
                 Send Us a Message
               </h3>
-              
+
               {submitted ? (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -124,7 +124,7 @@ export default function ContactSection() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Email Field */}
                   <div>
                     <label htmlFor="email" className="block text-[#0B3D2E] text-sm font-medium mb-2">
@@ -144,7 +144,7 @@ export default function ContactSection() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Travel Dates Field */}
                   <div>
                     <label htmlFor="travelDates" className="block text-[#0B3D2E] text-sm font-medium mb-2">
@@ -163,7 +163,7 @@ export default function ContactSection() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Message Field */}
                   <div>
                     <label htmlFor="message" className="block text-[#0B3D2E] text-sm font-medium mb-2">
@@ -180,7 +180,7 @@ export default function ContactSection() {
                       className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#D4A03A] focus:ring-1 focus:ring-[#D4A03A] transition-colors text-[#0B3D2E] resize-none"
                     />
                   </div>
-                  
+
                   {/* Submit Button */}
                   <button
                     type="submit"
@@ -203,7 +203,7 @@ export default function ContactSection() {
               )}
             </div>
           </div>
-          
+
           {/* Contact Info & Map */}
           <div className="contact-column space-y-8">
             {/* Contact Details */}
@@ -211,7 +211,7 @@ export default function ContactSection() {
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
-              
+
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
@@ -219,53 +219,53 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm mb-1">Email</p>
-                    <a 
-                      href="mailto:srilankaauthentic@gmail.com"
+                    <a
+                      href="mailto:info@srilankatravelv3ntours.com"
                       className="text-white hover:text-[#D4A03A] transition-colors"
                     >
-                      srilankaauthentic@gmail.com
+                      info@srilankatravelv3ntours.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-[#D4A03A]" />
                   </div>
                   <div>
                     <p className="text-white/60 text-sm mb-1">Phone / WhatsApp</p>
-                    <a 
-                      href="tel:+9478046564"
+                    <a
+                      href="tel:+94718965775"
                       className="text-white hover:text-[#D4A03A] transition-colors"
                     >
-                      +94 780 465 64
+                      +94 71 896 5775
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-[#D4A03A]" />
                   </div>
                   <div>
                     <p className="text-white/60 text-sm mb-1">Location</p>
-                    <p className="text-white">Kandy, Sri Lanka</p>
+                    <p className="text-white">Colombo, Sri Lanka (Island Wide Travel)</p>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Google Map */}
             <div className="rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63320.43010607959!2d80.6051819!3d7.2946288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae366266498acd3%3A0x411a3818a1e03c35!2sKandy%2C%20Sri%20Lanka!5e0!3m2!1sen!2s!4v1709251200000!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.60533256038!2d79.77380295822363!3d6.921833527265814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2s!4v1714416180373!5m2!1sen!2s"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Sri Lanka Authentic Experience Location - Kandy"
+                title="Sri Lanka travel V3N tours Location - Colombo"
               />
             </div>
           </div>

@@ -109,7 +109,7 @@ export default function HeroSection() {
       >
         {/* Eyebrow */}
         <div ref={eyebrowRef} className="eyebrow mb-6 text-center">
-          Sri Lanka Authentic Experience
+          Sri Lanka travel V3N tours
         </div>
         
         {/* Headline */}
